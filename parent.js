@@ -3,7 +3,7 @@ import "./child";
 console.log("init Parent");
 export const isGood = "a";
 
-const currentExports = module.__proto__.exports;
+const currentExports = module.__proto__.exports || {};
 const prevExports = (module.hot.data && module.hot.data.prevExports) || null;
 
 if (currentExports.isGood) {
